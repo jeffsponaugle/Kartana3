@@ -7,7 +7,7 @@ This is an implemenation of a simple 8-bit CPU design built using 74XX series di
 
 ## Instruction Set Architecture
 
-The instruction set is a RISC-like load-store design with support for 16 general purpose registers.  The internal data path is 8-bits wide, as are the registers and the external data path.  The external memory architecure is a Harvard arcitecure with split program and data memory. The Program Counter is an 9-bit effective program counter supporting 512 bytes of program memory, and the external data memory is addressed with 8 bits of address supporting 256 bytes of data memory.  There is also a dedicated 256 byte IO address space for devices.
+The instruction set is a RISC-like load-store design with support for 16 general purpose registers.  The internal data path is 8-bits wide, as are the registers and the external data path.  The external memory is a Harvard architecure with split program and data memory. The Program Counter is an 9-bit effective program counter supporting 512 bytes of program memory, and the external data memory is addressed with 8 bits of address supporting 256 bytes of data memory.  There is also a dedicated 256 byte IO address space for devices.
 
 All instructions are a single size, 16 bits, requiring two bytes of program memory.   The CPU has a fixed two cycle fetch followed by a single cycle execution.  All instructions execute in a single cycle, netting a instructions/second rate 1/3 of the CPU clock rate.
 
@@ -15,7 +15,7 @@ Instruction Set:
 
 ![](/Docs/InstructionSetSummary.jpg)
 
-Most ALU operations are 3 operand, and there are not restrictions on those operands.  Each can be any of the 16 general purpose registers, and they do not need to be unique.
+Most ALU operations are 3 operand, and there are no restrictions on those operands.  Each can be any of the 16 general purpose registers, and they do not need to be unique.
 
 As an example:
 
@@ -29,9 +29,9 @@ Load and Store operations use either an immediate address or an address in a reg
 
 The Shift operations are defined and partially decoded, but not in the physcial implementation.  The intention was to add this via a 5th PCB or via enhancements to the ALU PCB.
 
-The Jump operation is absolute only, but there is space for a relative jump instruction not yet implemented.  With such a small instruction address space the relative jump is not needed.  Jump operations are flag driven, with two simple flag types: Carry and Zero.
+The Jump operation is absolute only, but there is space for a relative jump instruction not yet implemented.  With such a small instruction address space the relative jump is not required.  Jump operations are flag driven, with two simple flag types: Carry and Zero.
 
-All decode and operation logic is direct sequential logic with no microcode.  Microcode would be a slighty more compact implementation, but given the simple instruction set direct logic was straightfoward to design.  This also improved overall clock performance, which is operation at at least 2.5Mhz real clock rate.
+All decode and operation logic is direct sequential logic with no microcode.  Microcode would be a slighty more compact implementation, but given the simple instruction set direct logic was straightfoward to design. This also improved overall clock performance, which is operation at at least 2.5Mhz real clock rate.  The longest path thru the micro-sequence logic is two gate delays, so the control logic alone could probably operate at >20Mhz.
 
 ## Physcial Implementation
 
