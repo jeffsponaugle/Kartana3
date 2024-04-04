@@ -67,6 +67,14 @@ The core logic for flow control and operation are contained on two sheets:
 
 ![](/images/ControlSchematicPage2.png)
 
+Much of the decoding and signal geneartion logic is done with 74HC151 8:1 decoder and 74HC153 4:1 decoders. 
+
+The Register file is implemented using two SRAMs where each SRAM carries a copy of all 16 registers.  That allows two differt registers to be read at the same time as well as write to a third register, all in a single cycle.  This design is the mostly likly limitation to overal clock speed as it requires two complete SRAM operations inside a single cycle.
+
+![](/images/RegFilePage1.png)
+
+The ALU implementation is done with 4 path model with AND, OR, XOR, and ADD/SUB as the 4 paths.  2 4HC283s provide the adder/subtractor, and the XOR path is used for XOR, NOT, and PASSTHRU.
+
 
 ## Operations
 A very short video showing the CPU operating:
