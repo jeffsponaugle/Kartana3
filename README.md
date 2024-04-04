@@ -3,7 +3,7 @@ A simple 8-bit CPU implemented completely in simple digital logic including 74XX
 
 This is an implemenation of a simple 8-bit CPU design built using 74XX series digital logic on 2-layer PCBs.  The goal was to pick a simple instruction set that would allow for simple assembly language programs.  Due to the limited instructions set size realtive offsets and relocatable code is not possible.
 
-![](/images/IMG_7407.jpg)
+![](/images/IMG_7407.jpeg)
 
 ## Instruction Set Architecture
 
@@ -39,7 +39,7 @@ The CPU is implemented on a total of 4 PCBs.
 
 - A logic PCB that has all of the sequencing, decode, and signal generation.  This PCB could be replaced with a microcode implementation later if desired.
 
-![](/images/IMG_7409.jpg)
+![](/images/IMG_7409.jpeg)
 
 - An ALU PCB that implements the core ALU, which includes:
   +ADD 
@@ -49,15 +49,15 @@ The CPU is implemented on a total of 4 PCBs.
   +XOR   
   +NOT
   +PASS_THRU
-![](/images/IMG_7412.jpg)
+![](/images/IMG_7412.jpeg)
 
 - A register file PCB that implements 16x 8 bit registers. 
 
-![](/images/IMG_7413.jpg)
+![](/images/IMG_7413.jpeg)
 
 - A memory/clock PCB that has the system RAM, FLASH, LEDS, clock, reset button, and memory decoding logic.
 
-![](/images/IMG_7407.jpg)
+![](/images/IMG_7407.jpeg)
 
 
 
