@@ -17,7 +17,7 @@ Most ALU operations are 3 operand, and there are not restrictions on those opera
 
 As an example:
 
-'XOR R1,R1,R1' 
+`XOR R1,R1,R1`
 
 would clear the R1 register, since and XOR against the same value results in zero.
 
