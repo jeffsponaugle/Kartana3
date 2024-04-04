@@ -10,5 +10,18 @@ The instruction set is a RISC-like load-store design with support for 16 general
 All instructions are a single size, 16 bits, requiring two bytes of program memory.   The CPU has a fixed two cycle fetch followed by a single cycle execution.  All instructions execute in a single cycle, netting a instructions/second rate 1/3 of the CPU clock rate.
 
 Instruction Set:
+
 ![](/Docs/InstructionSetSummary.jpg)
+
+Most ALU operations are 3 operand, and there are not restrictions on those operands.  Each can be any of the 16 general purpose registers, and they do not need to be unique.
+
+As an example:
+
+'XOR R1,R1,R1' 
+
+would clear the R1 register, since and XOR against the same value results in zero.
+
+The ALU operations ADD and SUB use the carry flag, and a side effect was added to the OR/XOR/AND/NOT operation to clear the carry flag.   You can use an instruction like OR R1,R1,R1 to make no changes except the CF clear.
+
+
 
