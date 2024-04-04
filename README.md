@@ -39,7 +39,7 @@ The CPU is implemented on a total of 4 PCBs.
 
 - A logic PCB that has all of the sequencing, decode, and signal generation.  This PCB could be replaced with a microcode implementation later if desired.
 
-![](/images/IMG_7409.jpeg)
+  ![](/images/IMG_7409.jpeg)
 
 - An ALU PCB that implements the core ALU, which includes:
   +ADD 
@@ -49,17 +49,28 @@ The CPU is implemented on a total of 4 PCBs.
   +XOR   
   +NOT
   +PASS_THRU
-![](/images/IMG_7412.jpeg)
+  ![](/images/IMG_7412.jpeg)
 
 - A register file PCB that implements 16x 8 bit registers. 
 
-![](/images/IMG_7413.jpeg)
+  ![](/images/IMG_7413.jpeg)
 
-- A memory/clock PCB that has the system RAM, FLASH, LEDS, clock, reset button, and memory decoding logic.
+- A memory/clock PCB that has the system RAM, FLASH, LEDS, clock, reset button, and memory decoding logic.  (See first picture in this file)
 
-![](/images/IMG_7407.jpeg)
+## Schematics
+
+There are PDF schematics in the schematics subfolder.
+
+The core logic for flow control and operation are contained on two sheets:
+
+![](/images/ControlSchematicPage1.png)
+
+![](/images/ControlSchematicPage2.png)
 
 
+## Operations
+A very short video showing the CPU operating:
+[Youtube Video](https://youtu.be/YNhLuDI3SnE)
 
 
 
