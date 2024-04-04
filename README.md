@@ -10,5 +10,5 @@ The instruction set is a RISC-like load-store design with support for 16 general
 All instructions are a single size, 16 bits, requiring two bytes of program memory.   The CPU has a fixed two cycle fetch followed by a single cycle execution.  All instructions execute in a single cycle, netting a instructions/second rate 1/3 of the CPU clock rate.
 
 Instruction Set:
-!()/Docs/InstructionSetSummary.jpg
+!(/Docs/InstructionSetSummary.jpg)
 
